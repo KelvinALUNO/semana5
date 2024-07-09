@@ -34,6 +34,8 @@ function adicionar() {
         }
     })
 }
+setInterval(1000)
+console.log(setInterval)
 async function recuperarDados() {
     try {
         dadosSalvos.forEach((dadosSalvos) => {
@@ -60,4 +62,5 @@ function obterArrayDoLocal() {
 function salvarArrayNoLocal(array) {
     localStorage.setItem("meus-interesses", JSON.stringify(array));
 }
+
   
