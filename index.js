@@ -70,5 +70,26 @@ Limpar.addEventListener('click', () => {
 });
 }
 limpar()
+async function Noticias() {
+    try {
+      const url = 'https://servicodados.ibge.gov.br/api/v3/noticias/?tipo=release';
+      const response = await fetch(url);  
+      const data = await response.json();
+      const primeiraNoticia = data.items[0];
+      if (primeiraNoticia) {
+         const titulo = primeiraNoticia.titulo;
+         const divConteudo = document.getElementById('conteudo');
+         const apiData = { texto: titulo};
+         const paragrafo = document.createElement('p');
+         paragrafo.textContent = apiData.texto;
+         divConteudo.appendChild(paragrafo);
+        } else {
+        alert:('notícia não encontrada.');
+      }
+    } catch (error) {
+      console.alert('Erro ao processar a requisição:', error.message)
+    }
+  }
+  Noticias()
 
-  
+
