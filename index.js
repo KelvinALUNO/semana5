@@ -62,5 +62,13 @@ function obterArrayDoLocal() {
 function salvarArrayNoLocal(array) {
     localStorage.setItem("meus-interesses", JSON.stringify(array));
 }
+function limpar() {
+const Limpar = document.querySelector('#limpar');
+Limpar.addEventListener('click', () => {
+  localStorage.removeItem('meus-interesses')
+  ul.innerHTML = ""
+});
+}
+limpar()
 
   
