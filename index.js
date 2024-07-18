@@ -3,8 +3,14 @@ const myArray = JSON.stringify(array)
 localStorage.setItem("meus-interesses", myArray)
 const dados = localStorage.getItem("meus-interesses")
 const dadosSalvos = JSON.parse(dados)
-const ul = document.querySelector('ul');
-ul.innerHTML = '';
+const ul = document.querySelector('ul')
+ul.innerHTML = ''
+const input = document.querySelector("input")
+    input.addEventListener('keydown', (event) => {
+        if (event.code === 'Enter') {
+            adicionar()
+        }
+    })
 function adicionar() {
     const ul = document.querySelector("ul")
     const li = document.createElement("li")
@@ -15,6 +21,7 @@ function adicionar() {
     input.value = ""
     const delItem = document.createElement('button')
     delItem.textContent = 'remover'
+    delItem.className = "remove"
     delItem.onclick = function() {
      ul.removeChild(li)
     }
@@ -33,6 +40,7 @@ function adicionar() {
             localStorage.setItem("meus-interesses", JSON.stringify(myArray))
         }
     })
+
 }
 setInterval(1000)
 console.log(setInterval)
@@ -44,6 +52,7 @@ async function recuperarDados() {
             ul.appendChild(li)
             const delItem = document.createElement('button')
             delItem.textContent = 'remover'
+            delItem.className = "remove"
             delItem.onclick = function() {
                 ul.removeChild(li)
             }  

@@ -91,14 +91,19 @@ header h1 {
 }
 
 .list ul {
-    list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .list ul li {
-    padding: 16px;
+    padding: 1px;
     background: #fff;
     border-radius: 5px;
     color: #44546A;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    display: flex;
 }
 
 .news {
@@ -127,4 +132,14 @@ header h1 {
     text-overflow: ellipsis;
     font-size: 14px;
     color: #44546A;
+}
+.remove {
+    background-color: #0074D9;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-bottom: 5%;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
 }
